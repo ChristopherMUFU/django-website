@@ -30,7 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "*",
     "127.0.0.1:8000",
-    "https://django-website-se.herokuapp.com/"
+    "https://django-website-se.herokuapp.com/",
 ]
 
 
@@ -63,6 +63,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+)
 
 ROOT_URLCONF = "site_back.urls"
 
