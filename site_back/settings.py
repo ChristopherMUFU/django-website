@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import datetime
+import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,30 +25,42 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-b21d+hp95j)cnv7glybgc4xl!5btn1ta^hiugzfd=e+!p!s&#m"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "*",
+    "http://localhost:3000/",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'restaurant',
+    'paiement',
+    'accounts',
+    'django_rest_passwordreset',
+    'rest_framework',
+    'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = "site_back.urls"
@@ -115,3 +129,23 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=15),
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'users.views.custom_jwt.jwt_response_payload_handler',
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=15),
+    'JWT_AUTH_HEADER_PREFIX': 'Token',
+}
+SIMPLE_JWT = {
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=15),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=15),
+    'ROTATE_REFRESH_TOKENS': True,
+}
+
+# test keys Stripe API
+STRIPE_TPK = "pk_test_51IO2jEJIeSRBZ9rnDhqFSfnzgstAY0jKIVLiW1vkV5aNVJXu7rnLxdsqcPM1Jfr3r1BLUHFP3GaFz9wGLkKZvyry00QGL6rZg7"
+STRIPE_TSK = "sk_test_51IO2jEJIeSRBZ9rnqj6yKXwo6cvDoAQUDqh0sEcpy6t170IXjO3B2gZ1R2EjHBftW2RmDi4ZKWRJfRxs910JEPo800VWkeMfNw"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
