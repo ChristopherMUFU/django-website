@@ -29,7 +29,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "*",
-    "http://localhost:3000/",
+    "127.0.0.1:8000",
+    "https://django-website-se.herokuapp.com/"
 ]
 
 
