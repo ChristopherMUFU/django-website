@@ -1,0 +1,18 @@
+.bold-details {
+  font-weight: bold;
+  line-height: 0px;
+  color:#04295D;
+}
+
+.title-details {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color:#04295D;
+}
+
+
+.ecarter-prix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

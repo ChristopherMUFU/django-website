@@ -1,0 +1,142 @@
+.carte {
+  background: black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 1em 1em 2em 1em;
+  margin-left: 2.5rem;
+  height: max-content;
+  margin-right: 2.5rem;
+  background-position: center;
+}
+
+.carte_contain {
+  background-color: black;
+}
+
+.carte__image-container {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.carte__image-container img {
+  width: 102px;
+  height: 93px;
+  object-fit: contain;
+}
+
+.carte_title {
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 90px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.carte__items {
+  margin-top: 15px;
+  padding: 0 100px 1em;
+  text-align: center;
+  margin-bottom: -1em;
+}
+
+.carte__item {
+  color: white;
+  padding: 5px 0;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  text-align: left;
+  font-family: "Roboto" !important;
+}
+
+
+.carte__item::before {
+  position: absolute;
+  left: -50px;
+  width: 40px;
+  height: 40px;
+  content: "";
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -1px;
+  display: none;
+}
+
+.carte__item.active::before {
+  display: block;
+}
+.carte__item.active {
+  color: #BC623C !important;
+  font-weight: 900;
+}
+.carte__item.active {
+  font-weight: 900;
+}
+
+.carte.active {
+  height: 100%;
+}
+
+@media (max-width: 1080px) {
+  .carte {
+    position: absolute;
+    top: 0;
+    left: -120%;
+    padding-top: 2rem;
+    /* left: -500px; */
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s;
+  }
+
+  .carte.active {
+    left: 0px;
+    overflow: visible;
+    margin-left: 0px !important;
+  }
+
+  .carte__item {
+    color: rgb(238, 238, 238);
+  }
+
+  .commander__carte i {
+    position: absolute;
+    left: 2rem;
+    margin-bottom: -4em;
+    
+  }
+}
+
+@media (max-width: 800px) {
+  .carte__image-container img {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carte_title {
+    line-height: normal;
+  }
+  .carte__image-container img {
+    display: none;
+  }
+}
+
+@media (max-height: 700px) {
+  .carte_title {
+    display: none;
+  }
+  .carte__item {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .commander__carte i {
+    position: absolute;
+    left: 14px;
+    margin-bottom: -2em;
+  }
+}

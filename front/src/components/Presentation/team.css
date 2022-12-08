@@ -1,0 +1,172 @@
+.team {
+  background-image: url("../../images/Deans-Kitchen_web.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 9em;
+  margin-top: 4em;
+  align-items: center !important;
+}
+
+.team_header {
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  opacity: 0.8;
+  padding: 4em;
+  background-color: white;
+  border: 4px solid ghostwhite;
+}
+
+.team__introduction {
+  max-width: 1000px;
+}
+
+.telecharger_btn values__button {
+  align-items: center !important;
+}
+
+.team_title {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ADADAD;
+}
+
+.team_text {
+  /* color: #90d9f1 !important; */
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.team_text span {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.team__description {
+  /* color: #90d9f1 !important; */
+  font-size: 1.5rem !important;
+  color: black;
+}
+
+.team_figure {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.team__top-row,
+.team__bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.personnel__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 2rem;
+}
+
+.personnel__container h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* responsive */
+
+#team{
+  height: 100vh;
+}
+.telecharger_btn {
+  text-align: center ;
+  background-color: black;
+}
+
+@media screen and (max-width: 1100px) {
+  
+
+  #team{
+    height: max-content;
+  }
+
+  .team_title {
+    font-size: 2rem;
+  }
+
+  .personnel__container h2 {
+    font-size: 2rem;
+  }
+
+  .team_text {
+    font-size: 1.5rem !important;
+  }
+
+  .team_header {
+    
+    padding: 3em;
+    
+}
+
+.command_button {
+  align-items: center;
+}
+
+.telecharger_btn {
+  width: 200px;
+  text-align: center;
+  text-decoration: none !important;
+  color: white !important;
+  padding: 0.5rem 0rem;
+  background-color: black;
+  border-radius: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+}
+
+
+
+@media screen and (max-width: 750px) {
+
+  
+
+  .logo__team-page {
+    display: none;
+  }
+
+  .team_title {
+    font-size: 2rem;
+  }
+
+  .personnel__container h2 {
+    font-size: 2rem;
+  }
+
+  .team_text {
+    font-size: 1.5rem !important;
+  }
+
+  .team_header {
+    
+    padding: 3em;
+    
+}
+}
+
+

@@ -1,0 +1,81 @@
+.panier__fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radio__panier-choice {
+    margin: 0 0 1rem 0 !important;
+}
+
+.radio__panier-choice span {
+    margin: 0 0.2rem;
+}
+
+
+
+.radio__panier-zone{
+  margin-bottom: 40px;
+}
+
+.radio__panier-zone span{
+  margin: 0 0.2rem;
+}
+
+.radio__text-zone{
+  margin-bottom: -20px;
+}
+
+.livraison__container{
+  text-align: center;
+}
+
+.livraison__container p{
+  margin-top: -20px;
+  font-style: italic;
+  margin-bottom: 10%;
+}
+
+
+.panier__container--btn-valider {
+    margin-top: 2rem !important;
+}
+
+.error_cart{
+    text-align: center;
+}
+
+.CGV__container{
+    display: flex;
+    margin-top: 3rem;
+}
+
+.CGV__container p{
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+}
+
+.CGV__container p a{
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+}
+
+.CGV__container p a:hover{
+    color: black;
+}
+
+.MuiCheckbox-colorPrimary.Mui-checked{
+    color: #F7D452 !important;
+}
+
+.MuiRadio-colorSecondary.Mui-checked{
+    color: #A5393B !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: #F7D452 !important;
+}
+
+

@@ -1,2 +1,0 @@
-# django-website
-Django Website
